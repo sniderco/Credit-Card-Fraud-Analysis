@@ -1,20 +1,18 @@
-# 💳 Credit Card Fraud Detection
+# Credit Card Fraud Detection
 
-An end-to-end Machine Learning project that analyzes financial transaction data to detect fraudulent transactions. The project includes data preprocessing, exploratory data analysis (EDA), feature engineering, and a Logistic Regression model for fraud classification.
+## Project Overview
 
-## 📌 Project Overview
+This project develops a machine learning pipeline to detect fraudulent financial transactions using transaction-level data. The workflow includes data preprocessing, exploratory data analysis (EDA), feature engineering, model training, evaluation, and model serialization.
 
-Credit card fraud detection is a highly imbalanced classification problem where fraudulent transactions represent only a small fraction of all transactions. This project explores transaction patterns, engineers meaningful features, and builds a machine learning pipeline to classify fraudulent transactions.
+## Objectives
 
-## 🎯 Objectives
-
-* Analyze transaction patterns and fraud distribution.
-* Perform exploratory data analysis (EDA).
-* Engineer balance-based features.
+* Explore transaction data and fraud patterns.
+* Perform exploratory data analysis.
+* Engineer informative features.
 * Build a fraud detection model.
-* Evaluate model performance using classification metrics.
+* Evaluate classification performance.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 * Python
 * Pandas
@@ -25,74 +23,71 @@ Credit card fraud detection is a highly imbalanced classification problem where 
 * Joblib
 * Jupyter Notebook
 
-## 📂 Dataset Features
+## Dataset
 
-The dataset includes:
+The dataset contains financial transaction records with features including transaction type, transaction amount, origin and destination balances, and fraud labels.
 
-* Transaction Type
-* Transaction Amount
-* Origin Account Balance
-* Destination Account Balance
-* Fraud Label (`isFraud`)
-* Flagged Fraud (`isFlaggedFraud`)
+**Note:** The original dataset is not included in this repository because it exceeds GitHub's file size limit. A sample dataset or download link can be added separately.
 
-## 📈 Project Workflow
+## Project Workflow
 
-### 1. Data Exploration
+### Data Exploration
 
-* Checked dataset structure and missing values.
-* Analyzed fraud and flagged fraud distribution.
-* Explored transaction types.
-* Examined transaction amount distribution.
+* Inspected dataset structure.
+* Checked missing values.
+* Examined fraud distribution.
+* Analyzed transaction types.
+* Studied transaction amount distribution.
 
-### 2. Exploratory Data Analysis
+### Exploratory Data Analysis
 
 Performed analysis on:
 
-* Transaction Type Distribution
-* Fraud Rate by Transaction Type
-* Transaction Amount Distribution (Log Scale)
-* Amount vs Fraud (Box Plot)
-* Top Senders and Receivers
-* Fraud Distribution in **TRANSFER** and **CASH_OUT**
-* Correlation Heatmap
+* Transaction type distribution
+* Fraud rate by transaction type
+* Transaction amount distribution
+* Box plot of transaction amount by fraud class
+* Top sender accounts
+* Top receiver accounts
+* Fraud analysis for TRANSFER and CASH_OUT transactions
+* Correlation heatmap
 
-### 3. Feature Engineering
+### Feature Engineering
 
-Created new features:
+Created the following features:
 
-* `balanceDifforig`
-* `balanceDiffdest`
+* balanceDifforig
+* balanceDiffdest
 
-### 4. Data Preprocessing
+### Data Preprocessing
 
-* Removed unnecessary columns (`nameOrig`, `nameDest`, `isFlaggedFraud`)
-* Standardized numerical features using **StandardScaler**
-* Applied **One-Hot Encoding** to transaction type
+* Removed unnecessary columns
+* Applied StandardScaler to numerical features
+* Applied One-Hot Encoding to transaction type
 
-## 🤖 Machine Learning Model
+## Machine Learning
 
-**Algorithm Used**
+Model Used
 
-* Logistic Regression (`class_weight="balanced"`)
+* Logistic Regression (class_weight="balanced")
 
-### Model Pipeline
+Pipeline
 
 * Train-Test Split
-* Standard Scaling
+* Feature Scaling
 * One-Hot Encoding
 * Logistic Regression
 * Model Evaluation
 
-## 📊 Model Evaluation
+## Model Evaluation
 
-Evaluated using:
+Performance was evaluated using:
 
 * Classification Report
 * Confusion Matrix
-* Model Accuracy (`pipeline.score()`)
+* Accuracy Score
 
-## 💾 Model Export
+## Model Export
 
 The trained model is saved as:
 
@@ -100,20 +95,20 @@ The trained model is saved as:
 credit_card_fraud_model.pkl
 ```
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 Credit-Card-Fraud-Detection/
 │
 ├── credit_cardfraud.ipynb
-├── AIML Dataset.csv
-├── credit_card_fraud_model.pkl
 ├── README.md
 ├── requirements.txt
-└── images/
+├── credit_card_fraud_model.pkl
+├── images/
+└── sample_dataset.csv (optional)
 ```
 
-## ▶️ Installation
+## Installation
 
 ```bash
 git clone <repository-link>
@@ -123,7 +118,7 @@ cd Credit-Card-Fraud-Detection
 pip install -r requirements.txt
 ```
 
-## 🚀 Run the Project
+## Run
 
 ```bash
 jupyter notebook credit_cardfraud.ipynb
@@ -131,12 +126,15 @@ jupyter notebook credit_cardfraud.ipynb
 
 Run all notebook cells sequentially.
 
-## 📄 Conclusion
+## Future Improvements
 
-This project demonstrates the complete workflow of a fraud detection system, including data preprocessing, feature engineering, exploratory data analysis, and machine learning model development. A Logistic Regression classifier with balanced class weights was trained and evaluated to identify fraudulent financial transactions.
+* Compare multiple classification algorithms.
+* Hyperparameter tuning.
+* Improve fraud detection for highly imbalanced data.
+* Deploy the model as a web application.
 
-## 👨‍💻 Author
+## Author
 
-**Snigdha**
+**Snigdha Singh**
 
-Data Analytics | Machine Learning | Python
+Data Science | Machine Learning | Python
